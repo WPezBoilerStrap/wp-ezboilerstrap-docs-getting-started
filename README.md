@@ -59,7 +59,7 @@ Open up the theme's functions.php and then work your way down. As you hit these 
 
 - ezbsGlobal - Stores and manages key global variables. This is useful when you have a child theme. 
 
-- ezbsModl - Used to communicate details to the vue(s). Notice it extends another class. In this new archtiecture, the theme is simply the raw structure (with some bits of logic). The Modl is used to fill in the blanks of the theme (i.e., vue(s)). In other words, a theme (read: structure) can have multiple Modls. The other key innovation is that the values supplied to a vue by the Modl can be manipulated on the fly. That is, business rules / logic as it relates to the structure are centralized in the Modl.  
+- ezbsModl - Used to communicate details to the vue(s). Notice it extends another class (which is its own repo). In this new archtiecture, the theme is simply the raw structure (with some bits of logic). The Modl is used to fill in the blanks of the theme (i.e., vue(s)). In other words, a theme (read: structure) can have multiple Modls. The other key innovation is that the values supplied to a vue by the Modl can be manipulated on the fly. That is, business rules / logic as it relates to the structure are centralized in the Modl.  
 
 - ez_gtp() is a reworking of WordPress' get_template_part(). It's more or less the same but now it also has a bool that act as a switch. If you have a biz rule and don't want a particualr TP, just set the bool to false. 
 
