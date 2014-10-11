@@ -20,7 +20,7 @@ WPezBoilerStrap (Uno) isn't so much a single theme as it is a working demonstrat
 1. "Why should I care? What's in it for me?"
 -------------------------------------------
 
-If you're an agency or an independent WordPress developer and you're developing six or more bespoke WordPress based products per year, and you want to optimize resources (time and money) yet also develop superior, more robust products then please continue reading. 
+If you're an agency or an independent WordPress developer; you're developing six or more bespoke WordPress based products per year; and you want to optimize resources (time and money) yet also develop superior, more robust products then please continue reading. 
 
 This tool is not intended for commercial themes and/or themes for the WP.org theme repo. 
 
@@ -45,11 +45,13 @@ Great. Let's do a quick overview of some of the programming concepts that went i
 
 - MVC - Model View Controler: http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 
+- TREATRT - The Right Experience At The Right Time 
+
 
 4. "Why do you use Modl Vue Ctrlr instead of Model View Controler?"
 -------------------------------------------------------------------
 
-Frankly, I didn't want pushback from MVC purists. The goal was to embrace the MVC ideal but bend it a bit in the context of "The WordPress Way." 
+Frankly, the alt-words are to sidestep pushback from MVC purists. The goal was to embrace the MVC ideal but bend it a bit in the context of "The WordPress Way." 
 
 
 5. "Make sense. What next?"
@@ -59,7 +61,7 @@ Open up the theme's functions.php and then work your way down. As you hit these 
 
 - ezbsGlobal - Stores and manages key global variables. This is useful when you have a child theme. 
 
-- ezbsModl - Used to communicate details to the vue(s). Notice it extends another class (which is its own repo). In this new archtiecture, the theme is simply the raw structure (with some bits of logic). The Modl is used to fill in the blanks of the theme (i.e., vue(s)). In other words, a theme (read: structure) can have multiple Modls. The other key innovation is that the values supplied to a vue by the Modl can be manipulated on the fly. That is, business rules / logic as it relates to the structure are centralized in the Modl.  
+- ezbsModl - Used to communicate details to the vue(s). Notice it extends another class (which is its own repo). In this new archtiecture, the theme is simply the raw structure (with some bits of logic). The Modl is used to fill in the blanks of the theme (i.e., vue(s)). In other words, a theme (read: structure) can have multiple Modls. The other key innovation is that the values supplied to a vue by the Modl can be manipulated on the fly. That is, business rules / logic as it relates to the structure are centralized in the Modl (not sprawling and/or lost across a mish mash of traditional WP theme templates).  
 
 - ez_gtp() is a reworking of WordPress' get_template_part(). It's more or less the same but now it also has a bool that act as a switch. If you have a biz rule and don't want a particualr TP, just set the bool to false. 
 
@@ -71,14 +73,30 @@ Open up the theme's functions.php and then work your way down. As you hit these 
 
 Yup. Believe it or not, that's it. The magic is how most everything has been reorganized, as well as how the Modl becomes the centralized brains that manages and manipulates the structure (i.e., theme).
 
-While I don't want use the word "decoupled" - and suffer the wrath of OOP purists - I will say that how the architecture "thinks" does feels more natural and logical. This is especially true if you want to reuse previous work and/or improve your workflow. 
+Using the word "decoupled" - and suffer the wrath of OOP purists - might be going too far, but how this architecture "thinks" does feels more logical and more natural. This is especially true if you want to reuse previous work and/or improve your workflow. 
 
 
-7. "But I still feel a bit overwhelmed..."
+7. "Would you call this architecture innovative?"
+-------------------------------------------------
+
+Yes, of course it is ;)
+
+
+8. "Does this architecture work with the Aesop Story Engine (ASE) plugin?"
+--------------------------------------------------------------------------
+
+Not sure yet. But it is on the TODO list.
+
+That said, ASE says it works with (almost) any theme. There's no reason this architecture should be an exception. 
+
+In fact, this architecture's TREAT meshed with ASE's storytelling feels like a (potentially) mind-blowing combo.
+
+
+9. "But I still feel a bit overwhelmed..."
 ------------------------------------------
 
-Understood. Not to cloud the waters but also keep in mind the Holy Grail of this effort is to enable TREATRT: "The Right Experience At The Right Time," as well as providing granular control of reusable modules of code. 
+Understood. Not to cloud the waters but also keep in mind the Holy Grail of this effort is to enable TREATRT ("The Right Experience At The Right Time") as well as providing granular control of reusable modules of code. 
 
-That is, to make it easier to reuse vue(s), as well as be able to easily manipulate how and when you use a theme's given set of vues.
+That is, to make it easier to reuse vue(s), as well as be able to easily manipulate - via the Modl - how and when you use a theme's given set of vues and/or the values passed back to a vue (as it makes requests from the Modl).
 
-This architecture wants to configure more and code less. It wants to reuse code as much as possible. And it wants to provide more robust control - via the Modl - of the experience being delivered.
+Keep in mind, this architecture wants (you) to configure more and code less. It wants to reuse code as much as possible. And it wants to provide more robust control of the experience being delivered.
